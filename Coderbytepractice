@@ -1,0 +1,29 @@
+# Python Practice
+'''This is a funciton I wrote for a Coderyte practice problem'''
+
+def remove_punc(sen):
+  for i in sen:
+    if i in ['!','.','?',',','&']:
+      sen = sen.replace(i, '')
+    else: 
+      sen = sen
+  return sen
+
+
+def LongestWord(sen):
+
+  # code goes here
+  sen = remove_punc(sen)
+  words = sen.split()
+  lengths = []
+  for i in words:
+    lengths.append(len(i))
+  in_order = lengths.sort()
+  longest = lengths[-1]
+  for i in words:
+    if len(i) == longest:
+      return i
+  return sen
+
+# keep this function call here 
+print(LongestWord(input()))
