@@ -1,0 +1,13 @@
+def timeConversion(s):
+    if 'A' in s:
+        if s[:2] == '12':
+            return '00' + s[2:8]
+        else:
+            return s[:8]
+    else:
+        if s[:2] == '12':
+            return s[:8]
+        else :
+            plus_12 = int((s[:2]))+12
+            string_number = str(plus_12)
+            return string_number + s[2:8]
